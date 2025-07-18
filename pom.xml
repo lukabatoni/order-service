@@ -71,11 +71,6 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.techie.microservices</groupId>
-      <artifactId>order-service</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
