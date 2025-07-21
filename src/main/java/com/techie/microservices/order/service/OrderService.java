@@ -14,6 +14,8 @@ public class OrderService {
   private final OrderRepository orderRepository;
   private final InventoryClient inventoryClient;
 
+  private static final String PRODUCT_WITH_SKUCODE = "Product with skucode ";
+
   public void placeOrder(OrderRequestDto orderRequestDto) {
     var isProductInStock = inventoryClient.isInStock(
         orderRequestDto.skuCode(), orderRequestDto.quantity());
@@ -25,7 +27,7 @@ public class OrderService {
       order.setQuantity(orderRequestDto.quantity());
       orderRepository.save(order);
     }else {
-      throw new RuntimeException("Product with skucode " + orderRequestDto.skuCode() + " is not in stock");
+      throw new RuntimeException(PRODUCT_WITH_SKUCODE + orderRequestDto.skuCode() + " is not in stock");
     }
 
   }
